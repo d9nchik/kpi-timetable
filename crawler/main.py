@@ -73,6 +73,7 @@ def split_table_on_2_week(table):
     middle = int(len(table) / 2)
     first = table[:middle]
     second = table[middle:]
+    
     return first, second
 
 
