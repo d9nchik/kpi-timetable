@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^5.1.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "web-vitals": "^0.2.4",
