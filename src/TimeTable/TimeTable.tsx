@@ -80,24 +80,24 @@ function getWeekNumber(d: Date) {
   return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
 }
 
-function getNumberOfPair(date: Date): 0 | 1 | 2 | 3 | 4 | 5 | 6 {
-  const endOfPair = [1000, 1200, 1355, 1550, 1745, 2005];
+function getNumberOfPair(date: Date): 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 {
+  const endOfPair = [1000, 1200, 1355, 1550, 1745, 2005, 2155];
   const time = date.getHours() * 100 + date.getMinutes();
   for (let i = 0; i < endOfPair.length; i++) {
-    if (time < endOfPair[i]) return i as 0 | 1 | 2 | 3 | 4 | 5;
+    if (time < endOfPair[i]) return i as 0 | 1 | 2 | 3 | 4 | 5 | 6;
   }
-  return endOfPair.length as 6;
+  return endOfPair.length as 7;
 }
 
 function selectPair(
   weekNumber: 0 | 1,
   dayNumber: 0 | 1 | 2 | 3 | 4 | 5 | 6,
-  pairNumber: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+  pairNumber: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7,
   data: string[][][][]
 ): [0 | 1, number, number] {
   while (!getPairLength(data, weekNumber, pairNumber, dayNumber)) {
     pairNumber++;
-    if (pairNumber > 5) {
+    if (pairNumber > 6) {
       pairNumber = 0;
       dayNumber++;
       if (dayNumber > 5) {
@@ -112,7 +112,7 @@ function selectPair(
 function getPairLength(
   data: string[][][][],
   weekNumber: 0 | 1,
-  pairNumber: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+  pairNumber: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7,
   dayNumber: 0 | 1 | 2 | 3 | 4 | 5 | 6
 ): number {
   try {
