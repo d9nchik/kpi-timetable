@@ -42,6 +42,11 @@ const MobileTable: FunctionComponent<IProps> = ({
     <div>
       {modifiedBody.map((day, dayIndex) => {
         const [head, ...body] = day;
+
+        if (body.every(({ info }) => info.length === 0)) {
+          return <div key={dayIndex} />;
+        }
+
         return (
           <Table key={dayIndex} striped bordered hover>
             <thead className="table-dark">
