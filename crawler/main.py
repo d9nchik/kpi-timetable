@@ -96,6 +96,6 @@ def read_group_names() -> [str]:
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     first_week, second_week = parse_table('ІП-92')
-    print(first_week)
+    # print(first_week)
     with open('timetable.json', 'w') as f:
         dump([first_week, second_week], f, ensure_ascii=False)
