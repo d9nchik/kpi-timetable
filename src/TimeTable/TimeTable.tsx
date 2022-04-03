@@ -21,7 +21,7 @@ const TimeTable: FunctionComponent = () => {
 
     function update() {
       const date = new Date();
-      setWeekNumber(((getWeekNumber(date) + 1) % 2) as 0 | 1);
+      setWeekNumber((getWeekNumber(date) % 2) as 0 | 1);
       setDayNumber(((date.getDay() + 6) % 7) as 0 | 1 | 2 | 3 | 4 | 5 | 6);
       const [pairWeekNumber, pairActiveDay, pairActiveNumber] = selectPair(
         weekNumber,
