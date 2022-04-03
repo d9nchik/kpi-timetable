@@ -6,7 +6,7 @@ import AdaptiveTimeTable from './AdaptiveTable';
 const TimeTable: FunctionComponent = () => {
   const date = new Date();
   const [weekNumber, setWeekNumber] = useState(
-    ((getWeekNumber(date) + 1) % 2) as 0 | 1
+    (getWeekNumber(date) % 2) as 0 | 1
   );
   const [dayNumber, setDayNumber] = useState(
     ((date.getDay() + 6) % 7) as 0 | 1 | 2 | 3 | 4 | 5 | 6
